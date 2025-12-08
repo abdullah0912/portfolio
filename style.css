@@ -11,19 +11,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.profile-image-container img {
-    /* Görünüm Ayarları */
-    width: 150px; /* Veya ihtiyacınız olan boyut (Örn: 150 piksel genişlik) */
-    height: 150px; /* Genişlikle aynı olmalı, kareyi garanti eder */
-    object-fit: cover; /* Fotoğrafı keserek kareye tam sığdırır */
-    
-    /* Yuvarlak Yapmak için (Opsiyonel ama Tavsiye Edilir) */
-    border-radius: 50%; 
-    
-    /* Fotoğraf kenarına ince bir çerçeve eklemek (Opsiyonel) */
-    border: 3px solid #3498db; 
-}
-
 html {
   scroll-behavior: smooth;
 }

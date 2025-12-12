@@ -277,10 +277,6 @@ section {
   display: flex;
 }
 
-.about-pic {
-  border-radius: 2rem;
-}
-
 .arrow {
   position: absolute;
   right: -5rem;
@@ -455,4 +451,11 @@ footer p {
     object-fit: cover;
     border-radius: 50%;
   }
+}
+
+a:focus,
+.btn:focus {
+  outline: 2px solid rgb(0, 150, 255);
+  /* Belirgin bir halka */
+  outline-offset: 3px;
 }

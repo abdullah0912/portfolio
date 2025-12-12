@@ -150,22 +150,14 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: auto;
-  /* Değişti: İçerik uzadıkça sayfa da uzasın */
-  min-height: 100vh;
-  /* En az ekran boyu kadar olsun */
+  height: 96vh;
   margin: 0 10rem;
   box-sizing: border-box;
-  padding-bottom: 5rem;
-  /* Alt kısımdan biraz boşluk bırakalım */
+  min-height: fit-content;
 }
 
 .section-container {
-  gap: 4rem;
-  height: auto;
-  /* Yükseklik serbest bırakıldı */
-  align-items: center;
-  /* Dikeyde ortalasın */
+  display: flex;
 }
 
 /* PROFILE SECTION */
@@ -430,46 +422,4 @@ footer {
 
 footer p {
   text-align: center;
-}
-
-/* LANGUAGE SWITCH BUTTON STYLES */
-.language-switch {
-  cursor: pointer;
-  /* Üzerine gelince el işareti çıksın */
-  font-weight: 600;
-  /* Yazı kalın olsun */
-  border: 1px solid #333;
-  /* Çerçeve ekle */
-  padding: 0.5rem 1rem;
-  /* İç boşluk ver */
-  border-radius: 2rem;
-  /* Köşeleri yuvarlat (senin butonlarına benzesin) */
-  transition: all 0.3s ease;
-  /* Renk değişimi yumuşak olsun */
-  margin-top: 10px;
-  /* Mobilde biraz boşluk kalsın */
-}
-
-.language-switch:hover {
-  background: rgb(53, 53, 53);
-  /* Üzerine gelince arka plan koyulaşsın */
-  color: white;
-  /* Yazı beyaz olsun */
-}
-
-/* TEXT CONTAINER DUZENLEMESI */
-.text-container {
-  text-align: justify;
-  /* Yazıyı sağa ve sola yaslar, blok gibi düzgün durur */
-  max-width: 900px;
-  /* Yazı ekranın sonuna kadar gitmesin, belli bir genişlikte kalsın */
-  margin: 0 auto;
-  /* Ortalar */
-  line-height: 1.6;
-  /* Satır aralarını açar, okumayı kolaylaştırır */
-}
-
-.about-containers {
-  margin-bottom: 3rem !important;
-  /* Kutular ile yazı arasına boşluk koyar */
 }

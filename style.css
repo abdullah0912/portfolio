@@ -150,14 +150,17 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: auto; /* Değişti: İçerik uzadıkça sayfa da uzasın */
+  min-height: 100vh; /* En az ekran boyu kadar olsun */
   margin: 0 10rem;
   box-sizing: border-box;
-  min-height: fit-content;
+  padding-bottom: 5rem; /* Alt kısımdan biraz boşluk bırakalım */
 }
 
 .section-container {
-  display: flex;
+  gap: 4rem;
+  height: auto; /* Yükseklik serbest bırakıldı */
+  align-items: center; /* Dikeyde ortalasın */
 }
 
 /* PROFILE SECTION */
@@ -447,4 +450,12 @@ footer p {
   /* Üzerine gelince arka plan koyulaşsın */
   color: white;
   /* Yazı beyaz olsun */
+}
+
+/* TEXT CONTAINER DUZENLEMESI */
+.text-container {
+  text-align: justify; /* Yazıyı sağa ve sola yaslar, blok gibi düzgün durur */
+  max-width: 900px;    /* Yazı ekranın sonuna kadar gitmesin, belli bir genişlikte kalsın */
+  margin: 0 auto;      /* Ortalar */
+  line-height: 1.6;    /* Satır aralarını açar, okumayı kolaylaştırır */
 }

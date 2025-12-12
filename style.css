@@ -150,17 +150,22 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: auto; /* Değişti: İçerik uzadıkça sayfa da uzasın */
-  min-height: 100vh; /* En az ekran boyu kadar olsun */
+  height: auto;
+  /* Değişti: İçerik uzadıkça sayfa da uzasın */
+  min-height: 100vh;
+  /* En az ekran boyu kadar olsun */
   margin: 0 10rem;
   box-sizing: border-box;
-  padding-bottom: 5rem; /* Alt kısımdan biraz boşluk bırakalım */
+  padding-bottom: 5rem;
+  /* Alt kısımdan biraz boşluk bırakalım */
 }
 
 .section-container {
   gap: 4rem;
-  height: auto; /* Yükseklik serbest bırakıldı */
-  align-items: center; /* Dikeyde ortalasın */
+  height: auto;
+  /* Yükseklik serbest bırakıldı */
+  align-items: center;
+  /* Dikeyde ortalasın */
 }
 
 /* PROFILE SECTION */
@@ -454,8 +459,17 @@ footer p {
 
 /* TEXT CONTAINER DUZENLEMESI */
 .text-container {
-  text-align: justify; /* Yazıyı sağa ve sola yaslar, blok gibi düzgün durur */
-  max-width: 900px;    /* Yazı ekranın sonuna kadar gitmesin, belli bir genişlikte kalsın */
-  margin: 0 auto;      /* Ortalar */
-  line-height: 1.6;    /* Satır aralarını açar, okumayı kolaylaştırır */
+  text-align: justify;
+  /* Yazıyı sağa ve sola yaslar, blok gibi düzgün durur */
+  max-width: 900px;
+  /* Yazı ekranın sonuna kadar gitmesin, belli bir genişlikte kalsın */
+  margin: 0 auto;
+  /* Ortalar */
+  line-height: 1.6;
+  /* Satır aralarını açar, okumayı kolaylaştırır */
+}
+
+.about-containers {
+  margin-bottom: 3rem !important;
+  /* Kutular ile yazı arasına boşluk koyar */
 }

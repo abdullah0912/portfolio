@@ -440,11 +440,14 @@ footer p {
 /* MOBİL DÜZELTMESİ: Profil Resmini Mobilde Kare Yap */
 @media screen and (max-width: 800px) {
   .section__pic-container {
-    width: 275px !important;  /* Mobilde genişlik sabit olsun */
-    height: 275px !important; /* Yükseklik de aynı olsun (KARE) */
-    margin: 0 auto 2rem;      /* Ortala ve altından boşluk bırak */
+    width: 275px !important;
+    /* Mobilde genişlik sabit olsun */
+    height: 275px !important;
+    /* Yükseklik de aynı olsun (KARE) */
+    margin: 0 auto 2rem;
+    /* Ortala ve altından boşluk bırak */
   }
-  
+
   /* Resim her zaman kutuyu doldursun */
   .section__pic-container img {
     height: 100%;

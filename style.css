@@ -423,3 +423,28 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* LANGUAGE SWITCH BUTTON STYLES */
+.language-switch {
+  cursor: pointer;
+  /* Üzerine gelince el işareti çıksın */
+  font-weight: 600;
+  /* Yazı kalın olsun */
+  border: 1px solid #333;
+  /* Çerçeve ekle */
+  padding: 0.5rem 1rem;
+  /* İç boşluk ver */
+  border-radius: 2rem;
+  /* Köşeleri yuvarlat (senin butonlarına benzesin) */
+  transition: all 0.3s ease;
+  /* Renk değişimi yumuşak olsun */
+  margin-top: 10px;
+  /* Mobilde biraz boşluk kalsın */
+}
+
+.language-switch:hover {
+  background: rgb(53, 53, 53);
+  /* Üzerine gelince arka plan koyulaşsın */
+  color: white;
+  /* Yazı beyaz olsun */
+}

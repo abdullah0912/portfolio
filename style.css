@@ -103,6 +103,7 @@ a:hover {
   max-height: 0;
   overflow: hidden;
   transition: all 0.3 ease-in-out;
+  backdrop-filter: blur(10px);
 }
 
 .menu-links a {

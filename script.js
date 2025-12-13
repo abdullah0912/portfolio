@@ -4,3 +4,6 @@ function toggleMenu() {
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
+
+// Footer yılını otomatik güncelle
+document.getElementById("year").textContent = new Date().getFullYear();

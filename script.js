@@ -8,25 +8,20 @@ function toggleMenu() {
 // Footer yılını otomatik güncelle
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Henüz linki olmayan projeler için uyarı
 function showProjectAlert() {
-  alert("Proje detayları güncellenmektedir. Kodları Github'da inceleyebilirsiniz!");
+  alert("Project details are currently being updated. Please check the Github repo!");
 }
 
-/* --- script.js EN ALTINA EKLE --- */
-
-// Intersection Observer: Eleman ekrana girince animasyonu başlatır
+// Intersection Observer: Animasyon Tetikleyici
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('show-element'); // Görünür yap
-    } else {
-      // Eğer yukarı çıkınca tekrar kaybolsun istersen bu satırı aç:
-      // entry.target.classList.remove('show-element'); 
+      entry.target.classList.add('show-element');
     }
   });
 });
 
-// HTML'de animasyon vermek istediğin tüm elemanları seç
+// Animasyon uygulanacak tüm elemanları seç
 const hiddenElements = document.querySelectorAll('.hidden-element, .hidden-left, .hidden-right');
 hiddenElements.forEach((el) => observer.observe(el));
-

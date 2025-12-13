@@ -592,24 +592,17 @@ a:focus,
   }
 }
 
-/* --- style.css EN ALTINA EKLE --- */
+/* --- style.css EN ALTINA BU KODLARI YAPIŞTIR (Eskilerini sil) --- */
 
-/* 1. Başlangıçta Görünmez Olma Sınıfı */
+/* 1. Başlangıçta Görünmez Olma Sınıfı (Aşağıdan yukarı) */
 .hidden-element {
   opacity: 0;
-  transform: translateY(50px); /* Aşağıdan yukarı kaysın */
-  filter: blur(5px); /* Hafif bulanık başlasın */
-  transition: all 1s ease; /* 1 saniyede yavaşça gerçekleşsin */
+  transform: translateY(50px);
+  filter: blur(5px);
+  transition: all 1s ease;
 }
 
-/* 2. Görünür Olma Sınıfı (JS ekleyecek) */
-.show-element {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
-
-/* 3. Özel: Profil Resmi için Soldan Gelme Efekti */
+/* 2. Özel: Profil Resmi için (Soldan sağa) */
 .hidden-left {
   opacity: 0;
   transform: translateX(-100px);
@@ -617,7 +610,7 @@ a:focus,
   transition: all 1s ease;
 }
 
-/* 4. Özel: Yazılar için Sağdan Gelme Efekti */
+/* 3. Özel: Yazılar için (Sağdan sola) */
 .hidden-right {
   opacity: 0;
   transform: translateX(100px);
@@ -625,7 +618,11 @@ a:focus,
   transition: all 1s ease;
 }
 
-/* Bu önceki mesajda bahsettiğim renk hatası düzeltmesi */
-.contact-info-upper-container {
-  background: rgb(250, 250, 250); /* (250,250,250) yazan yeri böyle düzelt */
+/* --- DÜZELTME BURADA: show-element EN SONDA OLMALI --- */
+/* Bu sınıf eklendiğinde eleman görünür olur ve yerine oturur */
+.show-element {
+  opacity: 1;
+  transform: translate(0) !important;
+  /* Hem yatay hem dikey hareketi sıfırlar */
+  filter: blur(0);
 }

@@ -29,3 +29,4 @@ const observer = new IntersectionObserver((entries) => {
 // HTML'de animasyon vermek istediğin tüm elemanları seç
 const hiddenElements = document.querySelectorAll('.hidden-element, .hidden-left, .hidden-right');
 hiddenElements.forEach((el) => observer.observe(el));
+

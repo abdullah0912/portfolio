@@ -27,12 +27,15 @@ a {
   text-decoration: none;
 }
 
-/* NAVIGATION */
+/* NAVIGATION (LOGO DÜZENLEMESİ BURADA YAPILDI) */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  /* İki uca yasla (Logo sol, Linkler sağ) */
   align-items: center;
   height: 17vh;
+  padding: 0 8rem;
+  /* Kenarlardan boşluk bırakarak içeriye al */
 }
 
 .nav-links {
@@ -164,7 +167,6 @@ section {
   font-weight: 600;
 }
 
-/* EKSİK OLAN KISIM EKLENDİ: Başlıkların ortalanması */
 .section__text__p1 {
   text-align: center;
 }
@@ -192,7 +194,7 @@ section {
   height: 2rem;
 }
 
-/* BUTTONS */
+/* BUTTONS (EŞİTLEME DÜZENLEMESİ BURADA YAPILDI) */
 .btn-container {
   display: flex;
   justify-content: center;
@@ -203,6 +205,12 @@ section {
   font-weight: 600;
   padding: 1rem;
   width: 8rem;
+  height: 3.5rem;
+  /* Sabit yükseklik verildi */
+  box-sizing: border-box;
+  /* Padding taşmasın */
+  white-space: nowrap;
+  /* Yazı kaymasın */
   border-radius: 2rem;
   display: flex;
   justify-content: center;
@@ -419,6 +427,11 @@ a:focus,
 /* --- MEDIA QUERIES --- */
 
 @media screen and (max-width: 1400px) {
+  nav {
+    padding: 0 4rem;
+    /* Ekran küçülünce logo çok sıkışmasın */
+  }
+
   #profile {
     height: 83vh;
     margin-bottom: 6rem;
@@ -441,6 +454,11 @@ a:focus,
 
   #hamburger-nav {
     display: flex;
+  }
+
+  nav {
+    padding: 0 2rem;
+    /* Mobile yaklaşınca padding'i azalt */
   }
 
   #experience,

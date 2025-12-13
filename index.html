@@ -69,46 +69,49 @@
       </div>
     </div>
   </nav>
+
   <section id="profile">
-    <div class="section__pic-container">
+    <div class="section__pic-container hidden-left">
       <img src="./assets/profile-pic.png" alt="Abdullah Kaşgar profile picture" />
     </div>
-    <div class="section__text">
+
+    <div class="section__text hidden-right">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Abdullah Kaşgar⚡</h1>
       <p class="section__text__p2">Software Developer</p>
       <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('assets/cv.pdf')">Download CV</button>
+        <button class="btn btn-color-2" onclick="window.open('assets/cv.pdf', '_blank')">Download CV</button>
         <button class="btn btn-color-1" onclick="location.href='./#contact'">
           Contact Info
         </button>
       </div>
       <div id="socials-container">
         <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/abdullahka%C5%9Fgar/'" />
+          onclick="window.open('https://www.linkedin.com/in/abdullahka%C5%9Fgar/', '_blank')" />
         <img src="./assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/abdullah0912'" />
+          onclick="window.open('https://github.com/abdullah0912', '_blank')" />
       </div>
     </div>
   </section>
+
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
     <div class="section-container">
       <div class="about-details-container">
         <div class="about-containers">
-          <div class="details-container">
+          <div class="details-container hidden-element">
             <img src="./assets/experience.png" alt="Experience icon" class="icon" />
             <h3>Experience</h3>
             <p>3+ years Hands-on Coding<br />Software Development</p>
           </div>
-          <div class="details-container">
+          <div class="details-container hidden-element">
             <img src="./assets/education.png" alt="Education icon" class="icon" />
             <h3>Education</h3>
             <p>Associate's Degree<br />(Computer Programming)</p>
           </div>
         </div>
-        <div class="text-container">
+        <div class="text-container hidden-element">
           <p>
             Currently pursuing Computer Programming at Istanbul University, I am evolving into a full-spectrum software
             engineer.
@@ -126,10 +129,11 @@
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
   </section>
+
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Experience</h1>
-    <div class="experience-details-container">
+    <div class="experience-details-container hidden-element">
       <div class="about-containers">
         <div class="details-container">
           <h2 class="experience-sub-title">App Development Stack</h2>
@@ -215,10 +219,11 @@
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
+
   <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
+    <div class="experience-details-container hidden-element">
       <div class="about-containers">
         <div class="details-container color-container">
           <div class="article-container">
@@ -226,7 +231,8 @@
           </div>
           <h2 class="experience-sub-title project-title">Restaurant Management System (RMS)</h2>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/abdullah0912'">
+            <button class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/abdullah0912', '_blank')">
               Github
             </button>
             <button class="btn btn-color-2 project-btn" onclick="showProjectAlert()">
@@ -238,9 +244,10 @@
           <div class="article-container">
             <img src="./assets/loading.png" alt="Project 2" class="project-img" loading="lazy" />
           </div>
-          <h2 class="experience-sub-title project-title">Project Two</h2>
+          <h2 class="experience-sub-title project-title">AI Object Detection System</h2>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/abdullah0912'">
+            <button class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/abdullah0912', '_blank')">
               Github
             </button>
             <button class="btn btn-color-2 project-btn" onclick="showProjectAlert()">
@@ -252,20 +259,22 @@
     </div>
     <img src=" ./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
+
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
+    <div class="contact-info-upper-container hidden-element">
       <div class="contact-info-container">
         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
         <p><a href="mailto:abdullahkasgar2494@gmail.com">abdullahkasgar2494@gmail.com</a></p>
       </div>
       <div class="contact-info-container">
         <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/abdullah-ka%C5%9Fgar-6220a3329/">LinkedIn</a></p>
+        <p><a href="https://www.linkedin.com/in/abdullah-ka%C5%9Fgar-6220a3329/" target="_blank">LinkedIn</a></p>
       </div>
     </div>
   </section>
+
   <footer>
     <nav>
       <div class="nav-links-container">

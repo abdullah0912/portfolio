@@ -591,3 +591,41 @@ a:focus,
     text-align: justify;
   }
 }
+
+/* --- style.css EN ALTINA EKLE --- */
+
+/* 1. Başlangıçta Görünmez Olma Sınıfı */
+.hidden-element {
+  opacity: 0;
+  transform: translateY(50px); /* Aşağıdan yukarı kaysın */
+  filter: blur(5px); /* Hafif bulanık başlasın */
+  transition: all 1s ease; /* 1 saniyede yavaşça gerçekleşsin */
+}
+
+/* 2. Görünür Olma Sınıfı (JS ekleyecek) */
+.show-element {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* 3. Özel: Profil Resmi için Soldan Gelme Efekti */
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  filter: blur(5px);
+  transition: all 1s ease;
+}
+
+/* 4. Özel: Yazılar için Sağdan Gelme Efekti */
+.hidden-right {
+  opacity: 0;
+  transform: translateX(100px);
+  filter: blur(5px);
+  transition: all 1s ease;
+}
+
+/* Bu önceki mesajda bahsettiğim renk hatası düzeltmesi */
+.contact-info-upper-container {
+  background: rgb(250, 250, 250); /* (250,250,250) yazan yeri böyle düzelt */
+}

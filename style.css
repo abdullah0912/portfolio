@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; <-- BU SATIRI KALDIRDIM, SORUN BUYDU */
 }
 
 body {
@@ -91,7 +90,6 @@ nav {
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   z-index: 100;
-  /* Menü en üstte kalsın */
 }
 
 .menu-links a {
@@ -129,7 +127,6 @@ section {
   min-height: 100vh;
   margin: 0 10rem;
   box-sizing: border-box;
-  /* Sadece section için gerekli */
 }
 
 .section-container {
@@ -165,6 +162,11 @@ section {
 
 .section__text p {
   font-weight: 600;
+}
+
+/* EKSİK OLAN KISIM EKLENDİ: Başlıkların ortalanması */
+.section__text__p1 {
+  text-align: center;
 }
 
 .section__text__p2 {
@@ -386,7 +388,7 @@ a:focus,
   outline-offset: 3px;
 }
 
-/* --- ANIMATION CLASSES (EN ALTA) --- */
+/* --- ANIMATION CLASSES --- */
 .hidden-element {
   opacity: 0;
   transform: translateY(50px);
@@ -414,7 +416,7 @@ a:focus,
   filter: blur(0) !important;
 }
 
-/* --- MEDIA QUERIES (Sıralama Önemli) --- */
+/* --- MEDIA QUERIES --- */
 
 @media screen and (max-width: 1400px) {
   #profile {
@@ -475,7 +477,6 @@ a:focus,
   }
 }
 
-/* --- BU KISIM EKSİKTİ, GERİ EKLENDİ --- */
 @media screen and (max-width: 800px) {
   .section__pic-container {
     width: 275px !important;

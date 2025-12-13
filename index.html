@@ -8,41 +8,52 @@
   <title>Abdullah Kaşgar | AI & Embedded Dev</title>
 
   <meta name="description"
-    content="Abdullah Kaşgar - Software Developer Portfolio. AI, Embedded Systems, and Web Technologies." />
-  <meta name="keywords" content="Abdullah Kaşgar, Software Developer, Portfolio, AI, Embedded Systems" />
+    content="Abdullah Kaşgar - Software Developer Portfolio. Student at Istanbul University specializing in AI, Embedded Systems, and Modern Web Technologies." />
+  <meta name="keywords"
+    content="Abdullah Kaşgar, Software Developer, Yazılım Geliştirici, Portfolio, Istanbul University, AI, Embedded Systems, Web Development" />
   <meta name="author" content="Abdullah Kaşgar" />
+  <meta name="robots" content="index, follow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://abdullahkasgar.com/" />
   <meta property="og:title" content="Abdullah Kaşgar | Software Developer" />
   <meta property="og:description"
-    content="Explore the portfolio of a software developer evolving in AI and Embedded Systems." />
+    content="Explore the portfolio of a software developer evolving in AI, Embedded Systems, and Web Technologies." />
+
   <meta property="og:image" content="https://abdullahkasgar.com/assets/site-preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
 
   <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://abdullahkasgar.com/" />
+  <meta property="twitter:title" content="Abdullah Kaşgar | Software Developer" />
+  <meta property="twitter:description"
+    content="Software Developer Portfolio. AI, Embedded Systems, and Web Technologies." />
   <meta property="twitter:image" content="https://abdullahkasgar.com/assets/site-preview.jpg" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link type="image/png" sizes="32x32" rel="icon" href="assets/favicon.png">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    media="print" onload="this.media='all'">
 
+  <link type="image/png" sizes="32x32" rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <nav id="desktop-nav">
     <div class="logo">Abdullah Kaşgar</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
-
   <nav id="hamburger-nav">
     <div class="logo">Abdullah Kaşgar</div>
     <div class="hamburger-menu">
@@ -62,26 +73,24 @@
 
   <section id="profile">
     <div class="section__pic-container hidden-left">
-      <img src="./assets/profile-pic.png" alt="Abdullah Kaşgar profile" />
+      <img src="./assets/profile-pic.png" alt="Abdullah Kaşgar profile picture" />
     </div>
 
     <div class="section__text hidden-right">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Abdullah Kaşgar⚡</h1>
       <p class="section__text__p2">Software Developer</p>
-
       <div class="btn-container">
-        <a href="assets/cv.pdf" target="_blank" class="btn btn-color-2">Download CV</a>
-        <a href="#contact" class="btn btn-color-1">Contact Info</a>
+        <button class="btn btn-color-2" onclick="window.open('assets/cv.pdf', '_blank')">Download CV</button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact Info
+        </button>
       </div>
-
       <div id="socials-container">
-        <a href="https://www.linkedin.com/in/abdullahka%C5%9Fgar/" target="_blank">
-          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" />
-        </a>
-        <a href="https://github.com/abdullah0912" target="_blank">
-          <img src="./assets/github.png" alt="Github" class="icon" />
-        </a>
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="window.open('https://www.linkedin.com/in/abdullahka%C5%9Fgar/', '_blank')" />
+        <img src="./assets/github.png" alt="My Github profile" class="icon"
+          onclick="window.open('https://github.com/abdullah0912', '_blank')" />
       </div>
     </div>
   </section>
@@ -93,12 +102,12 @@
       <div class="about-details-container">
         <div class="about-containers">
           <div class="details-container hidden-element">
-            <img src="./assets/experience.png" alt="Experience" class="icon" />
+            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
             <h3>Experience</h3>
             <p>3+ years Hands-on Coding<br />Software Development</p>
           </div>
           <div class="details-container hidden-element">
-            <img src="./assets/education.png" alt="Education" class="icon" />
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
             <h3>Education</h3>
             <p>Associate's Degree<br />(Computer Programming)</p>
           </div>
@@ -108,15 +117,18 @@
             Currently pursuing Computer Programming at Istanbul University, I am evolving into a full-spectrum software
             engineer.
             My focus is at the intersection of <b>Artificial Intelligence</b> and <b>Embedded Systems</b>.
-            I move beyond theory to practical applications of <b>Machine Learning</b>, while engineering robust systems
-            with <b>Arduino</b> and real-time <b>IoT integration</b>.
+
+            I move beyond theory to practical applications of <b>Machine Learning</b> and <b>Neural Networks</b>,
+            while engineering robust systems with <b>Arduino</b> and real-time <b>IoT integration</b>.
+
+            Driven by the startup ecosystem, my goal is to architect scalable solutions using <b>cloud-native
+              technologies</b>
+            to solve complex real-world challenges.
           </p>
         </div>
       </div>
     </div>
-    <a href="#experience">
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" />
-    </a>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
   </section>
 
   <section id="experience">
@@ -124,47 +136,46 @@
     <h1 class="title">Experience</h1>
     <div class="experience-details-container hidden-element">
       <div class="about-containers">
-
         <div class="details-container">
           <h2 class="experience-sub-title">App Development Stack</h2>
           <div class="article-container">
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>HTML</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>CSS</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Javascript</h3>
                 <p>Basic</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Java</h3>
                 <p>Basic</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Dart</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Flutter</h3>
                 <p>Experienced</p>
@@ -172,33 +183,32 @@
             </article>
           </div>
         </div>
-
         <div class="details-container">
           <h2 class="experience-sub-title">DB, AI & Embedded Stack</h2>
           <div class="article-container">
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>MySQL</h3>
                 <p>Basic</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>SQLLite</h3>
                 <p>Basic</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Arduino</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
-              <img src="./assets/checkmark.png" alt="Check" class="icon" />
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Git</h3>
                 <p>Basic</p>
@@ -206,12 +216,9 @@
             </article>
           </div>
         </div>
-
       </div>
     </div>
-    <a href="#projects">
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" />
-    </a>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
 
   <section id="projects">
@@ -219,34 +226,39 @@
     <h1 class="title">Projects</h1>
     <div class="experience-details-container hidden-element">
       <div class="about-containers">
-
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/loading.png" alt="Restaurant Management System" class="project-img" loading="lazy" />
+            <img src="./assets/loading.png" alt="Project 1" class="project-img" loading="lazy" />
           </div>
-          <h2 class="experience-sub-title project-title">Restaurant Management System</h2>
+          <h2 class="experience-sub-title project-title">Restaurant Management System (RMS)</h2>
           <div class="btn-container">
-            <a href="https://github.com/abdullah0912" target="_blank" class="btn btn-color-2 project-btn">Github</a>
-            <button class="btn btn-color-2 project-btn" onclick="showProjectAlert()">Details</button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/abdullah0912', '_blank')">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="showProjectAlert()">
+              Details
+            </button>
           </div>
         </div>
-
-        <div class="details-container color-container">
+        <div class=" details-container color-container">
           <div class="article-container">
-            <img src="./assets/loading.png" alt="AI Object Detection" class="project-img" loading="lazy" />
+            <img src="./assets/loading.png" alt="Project 2" class="project-img" loading="lazy" />
           </div>
           <h2 class="experience-sub-title project-title">AI Object Detection System</h2>
           <div class="btn-container">
-            <a href="https://github.com/abdullah0912" target="_blank" class="btn btn-color-2 project-btn">Github</a>
-            <button class="btn btn-color-2 project-btn" onclick="showProjectAlert()">Details</button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/abdullah0912', '_blank')">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="showProjectAlert()">
+              Details
+            </button>
           </div>
         </div>
-
       </div>
     </div>
-    <a href="#contact">
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" />
-    </a>
+    <img src=" ./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
 
   <section id="contact">
@@ -254,11 +266,11 @@
     <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container hidden-element">
       <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email" class="icon contact-icon email-icon" />
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
         <p><a href="mailto:abdullahkasgar2494@gmail.com">abdullahkasgar2494@gmail.com</a></p>
       </div>
       <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon" />
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
         <p><a href="https://www.linkedin.com/in/abdullah-ka%C5%9Fgar-6220a3329/" target="_blank">LinkedIn</a></p>
       </div>
     </div>

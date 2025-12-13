@@ -7,3 +7,7 @@ function toggleMenu() {
 
 // Footer yılını otomatik güncelle
 document.getElementById("year").textContent = new Date().getFullYear();
+
+function showProjectAlert() {
+  alert("Proje detayları güncellenmektedir. Kodları Github'da inceleyebilirsiniz!");
+}

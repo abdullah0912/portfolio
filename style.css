@@ -151,10 +151,14 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  /* height: 96vh;  <-- BUNU SİL */
+  /* min-height: fit-content; <-- BUNU DA SİL */
+
+  min-height: 100vh;
+  /* <-- TEK BAŞINA BU YETERLİ */
+
   margin: 0 10rem;
   box-sizing: border-box;
-  min-height: fit-content;
 }
 
 .section-container {

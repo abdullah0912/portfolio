@@ -1,101 +1,104 @@
 /* =========================================
-   GENEL AYARLAR & MODERN DARK RENK PALETİ
+   DEĞİŞKENLER VE RENK PALETİ
+   Bu kısımda sitenin ana renklerini tanımlıyoruz.
+   Böylece tek bir yerden tüm renkleri değiştirebiliriz.
    ========================================= */
-
 :root {
-  /* --- ANA VURGU RENGİ: NEON CYAN --- */
   --primary-color: #00e5ff;
+  /* Ana tema rengi: Neon Mavi */
   --primary-dark: #00b8cc;
-
-  /* --- METİN RENKLERİ --- */
+  /* Hover (üzerine gelince) rengi */
   --text-dark: #ffffff;
+  /* Ana metin rengi: Beyaz */
   --text-gray: #a3a3a3;
-
-  /* --- ARKA PLANLAR --- */
+  /* İkincil metin rengi: Gri */
   --bg-color: #050505;
+  /* Sayfa arka plan rengi: Çok koyu siyah */
   --card-bg: #0f0f0f;
-
-  /* --- UI ELEMENTLERİ --- */
+  /* Kartların arka planı: Biraz daha açık siyah */
   --border-color: rgba(255, 255, 255, 0.1);
+  /* Kenarlık rengi: Şeffaf beyaz */
   --nav-bg: rgba(5, 5, 5, 0.95);
+  /* Menü arka planı: Yarı saydam */
   --glow-color: rgba(0, 229, 255, 0.3);
+  /* Parlama efekti rengi */
 }
 
+/* Tüm elemanlar için temel sıfırlama */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Padding'in genişliği etkilemesini engeller */
 }
 
+/* Sayfa Gövdesi (Body) */
 body {
   font-family: "Poppins", sans-serif;
+  /* Yazı tipi */
   overflow-x: hidden;
+  /* Yatay kaydırma çubuğunu gizle */
   background-color: var(--bg-color);
   color: var(--text-dark);
+
+  /* Arka plan için ince kareli (grid) desen */
   background-image:
     linear-gradient(var(--border-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
+/* HTML Temel Ayarı */
 html {
   scroll-behavior: smooth;
+  /* Sayfa içi linklere tıklayınca yumuşak kayış */
 }
 
-::selection {
-  background-color: var(--primary-color);
-  color: #000;
-}
-
+/* Paragraflar */
 p {
   color: var(--text-gray);
   line-height: 1.7;
+  /* Satırlar arası boşluk */
 }
 
-/* TRANSITION */
+/* Resimler */
+img {
+  max-width: 100%;
+  /* Resimler asla kutusundan taşmasın */
+  height: auto;
+}
+
+/* Genel Animasyon Geçişi */
+/* Linkler, butonlar ve kartlar için 0.4 saniyelik yumuşak geçiş */
 a,
-.btn {
-  transition: all 300ms ease;
+.btn,
+.icon,
+.details-container,
+.contact-info-upper-container {
+  transition: all 0.4s ease-in-out;
 }
 
 /* =========================================
-   DESKTOP NAV (MENÜ)
+   MENÜ (NAVBAR)
    ========================================= */
-
-nav,
-.nav-links {
-  display: flex;
-}
-
 nav {
+  display: flex;
   justify-content: space-around;
   align-items: center;
   height: 90px;
   background-color: var(--nav-bg);
+
+  /* Buzlu cam efekti (Blur) */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
   position: fixed;
+  /* Sayfanın tepesine sabitle */
   width: 100%;
   top: 0;
   z-index: 1000;
+  /* Her şeyin üstünde dursun */
   border-bottom: 1px solid var(--border-color);
-}
-
-.nav-links {
-  gap: 2rem;
-  list-style: none;
-  font-size: 1.1rem;
-  align-items: center;
-}
-
-a {
-  color: var(--text-dark);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--primary-color);
-  text-shadow: 0 0 10px var(--glow-color);
 }
 
 .logo {
@@ -105,18 +108,32 @@ a:hover {
   letter-spacing: 1px;
 }
 
-.logo:hover {
-  cursor: default;
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  /* Liste noktalarını kaldır */
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--text-dark);
+  text-decoration: none;
+  /* Link alt çizgisini kaldır */
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--glow-color);
+  /* Neon parlama efekti */
 }
 
 /* =========================================
-   HAMBURGER MENU (MOBİL)
+   MOBİL MENÜ (HAMBURGER)
    ========================================= */
-
 #hamburger-nav {
   display: none;
-  /* Mobilde menü kenarlığı yok */
-  border: none !important;
+  /* Varsayılan olarak gizli (Masaüstünde görünmez) */
 }
 
 .hamburger-menu {
@@ -124,6 +141,7 @@ a:hover {
   display: inline-block;
 }
 
+/* Menü İkonu (3 Çizgi) */
 .hamburger-icon {
   display: flex;
   flex-direction: column;
@@ -142,19 +160,22 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+/* Açılır Menü İçeriği */
 .menu-links {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: var(--bg-color);
+  background-color: #050505;
+  /* Tam siyah arka plan */
   width: 250px;
   max-height: 0;
+  /* Başlangıçta kapalı */
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  z-index: 1001;
   border-bottom-left-radius: 15px;
   border: 1px solid var(--border-color);
   border-top: none;
+  z-index: 1001;
 }
 
 .menu-links a {
@@ -164,7 +185,6 @@ a:hover {
   font-size: 1.3rem;
   color: var(--text-dark);
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
 }
 
 .menu-links li {
@@ -173,13 +193,14 @@ a:hover {
 
 .menu-links.open {
   max-height: 350px;
-  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.8);
 }
 
+/* Menü açılınca yükseklik artar */
+
+/* Menü açıldığında ikonun X şekline dönmesi */
 .hamburger-icon.open span:first-child {
   transform: rotate(45deg) translate(10px, 5px);
   background-color: var(--primary-color);
-  box-shadow: 0 0 10px var(--glow-color);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -189,43 +210,51 @@ a:hover {
 .hamburger-icon.open span:last-child {
   transform: rotate(-45deg) translate(10px, -5px);
   background-color: var(--primary-color);
-  box-shadow: 0 0 10px var(--glow-color);
 }
 
 /* =========================================
-   SECTIONS (BÖLÜMLER)
+   BÖLÜMLER (SECTIONS) GENEL AYARLARI
    ========================================= */
-
 section {
-  padding-top: 130px;
+  padding-top: 140px;
+  /* Sabit menünün altında kalmasın diye boşluk */
   min-height: 100vh;
-  margin: 0 10rem;
+  /* En az bir ekran boyu yükseklik */
+  margin: 0 auto;
   box-sizing: border-box;
-}
-
-.section-container {
-  display: flex;
+  max-width: 1200px;
+  /* İçerik çok fazla yayılmasın */
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* =========================================
-   PROFILE SECTION
+   PROFİL BÖLÜMÜ
    ========================================= */
-
 #profile {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
   height: 80vh;
-  align-items: center;
+}
+
+/* Profil Resmi */
+.section__pic-container img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 40px var(--glow-color);
+  /* Parlama */
+  animation: float 6s ease-in-out infinite;
+  /* Yüzme animasyonu */
 }
 
 .section__text {
   align-self: center;
   text-align: center;
-}
-
-.section__text p {
-  font-weight: 600;
 }
 
 .section__text__p1 {
@@ -249,50 +278,25 @@ section {
   margin: 10px 0;
 }
 
-#socials-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-  gap: 1.5rem;
-}
-
-/* ICONS */
-.icon {
-  cursor: pointer;
-  height: 2rem;
-  transition: transform 0.3s ease;
-  filter: invert(1) brightness(100%);
-}
-
-.icon:hover {
-  transform: translateY(-3px) scale(1.1);
-  filter: drop-shadow(0 0 8px var(--primary-color)) invert(1);
-}
-
-/* =========================================
-   BUTTONS
-   ========================================= */
-
+/* BUTONLAR */
 .btn-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
 .btn {
   font-weight: 600;
-  transition: all 300ms ease;
   padding: 1rem 1.5rem;
   border-radius: 2rem;
   cursor: pointer;
   white-space: nowrap;
   font-size: 1rem;
-  width: auto;
   min-width: 140px;
 }
 
+/* İçi Dolu Renkli Buton */
 .btn-color-1 {
   background: var(--primary-color);
   color: #000;
@@ -306,6 +310,7 @@ section {
   box-shadow: 0 0 30px var(--glow-color);
 }
 
+/* Çerçeveli Buton */
 .btn-color-2 {
   background: transparent;
   color: var(--text-dark);
@@ -318,88 +323,211 @@ section {
   box-shadow: 0 0 15px var(--glow-color);
 }
 
-/* =========================================
-   ABOUT SECTION
-   ========================================= */
-
-#about {
-  position: relative;
+/* Sosyal Medya İkonları */
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 1.5rem;
 }
 
-.about-containers {
+.icon {
+  height: 2rem;
+  cursor: pointer;
+  filter: invert(1);
+  /* İkon rengini beyaza çevirir */
+}
+
+.icon:hover {
+  filter: drop-shadow(0 0 8px var(--primary-color)) invert(1);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   HAKKIMDA BÖLÜMÜ
+   ========================================= */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
 }
 
 .about-details-container {
+  width: 100%;
+}
+
+.about-containers {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Bilgi Kartları */
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.details-container:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-8px);
+  box-shadow: 0 5px 25px var(--glow-color);
+}
+
+.text-container {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* =========================================
+   DENEYİM BÖLÜMÜ (Experience)
+   ========================================= */
+.experience-details-container {
+  display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.about-containers,
-.about-details-container {
+/* DÜZELTME: Başlık ile içerik arasındaki boşluk artırıldı */
+.experience-sub-title {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 4rem;
+  /* BU KISIM ARTIRILDI (Eskiden 2rem idi) */
+  text-align: center;
+}
+
+.article-container {
   display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  /* Sığmayanları alta at */
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+/* =========================================
+   PROJELER BÖLÜMÜ
+   ========================================= */
+.project-img {
+  border-radius: 1rem;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  margin: 1rem 0;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.project-btn {
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 1.5rem;
+  width: auto;
+}
+
+.project-btn:hover {
+  background: var(--primary-color);
+  color: #000;
+  border-color: var(--primary-color);
+}
+
+/* =========================================
+   İLETİŞİM BÖLÜMÜ
+   ========================================= */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  gap: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.contact-info-upper-container:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px var(--glow-color);
+  transform: translateY(-5px);
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* =========================================
+   ALT BİLGİ (FOOTER)
+   ========================================= */
+footer {
+  height: 20vh;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+}
+
+footer nav {
+  position: relative;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+  padding-top: 1rem;
 }
 
 .arrow {
   position: absolute;
   right: -3rem;
   bottom: 2.5rem;
-  z-index: 999;
   cursor: pointer;
   filter: invert(1);
   opacity: 0.5;
 }
 
-.arrow:hover {
-  opacity: 1;
-  transform: translateY(5px);
-}
-
-.details-container {
-  padding: 2rem;
-  flex: 1;
-  background: var(--card-bg);
-  border-radius: 1.5rem;
-  border: 1px solid var(--border-color);
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: none;
-}
-
-.details-container:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-  box-shadow: 0 5px 20px var(--glow-color);
-}
-
-.details-container h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.section-container {
-  gap: 4rem;
-  height: 80%;
-}
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
-
-.section__pic-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
-  box-shadow: 0 0 40px var(--glow-color);
-  animation: float 6s ease-in-out infinite;
-}
-
+/* =========================================
+   ANIMASYONLAR
+   ========================================= */
+/* Aşağı yukarı yüzme animasyonu */
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -414,207 +542,11 @@ section {
   }
 }
 
-/* =========================================
-   EXPERIENCE SECTION
-   ========================================= */
-
-#experience {
-  position: relative;
-}
-
-.experience-sub-title {
-  color: var(--text-dark);
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.experience-details-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: center;
-}
-
-article {
-  display: flex;
-  width: 12rem;
-  justify-content: flex-start;
-  gap: 0.8rem;
-  align-items: flex-start;
-}
-
-article .icon {
-  height: 1.5rem;
-  cursor: default;
-}
-
-article .icon:hover {
-  transform: none;
-  filter: invert(1);
-}
-
-article h3 {
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 0.3rem;
-}
-
-article p {
-  font-size: 0.9rem;
-  color: var(--text-gray);
-}
-
-/* =========================================
-   PROJECTS SECTION
-   ========================================= */
-
-#projects {
-  position: relative;
-}
-
-.color-container {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-}
-
-.project-img {
-  border-radius: 1rem;
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  opacity: 0.9;
-  transition: all 0.3s;
-}
-
-.details-container:hover .project-img {
-  opacity: 1;
-  transform: scale(1.02);
-}
-
-.project-title {
-  margin: 1.5rem 0;
-  color: var(--text-dark);
-  font-size: 1.5rem;
-}
-
-.project-btn {
-  color: var(--text-dark);
-  border-color: var(--border-color);
-  background: transparent;
-  padding: 0.8rem 1.5rem;
-  width: auto;
-}
-
-.project-btn:hover {
-  background: var(--primary-color);
-  color: #000;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 15px var(--glow-color);
-}
-
-/* =========================================
-   CONTACT SECTION
-   ========================================= */
-
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  background: var(--card-bg);
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s;
-}
-
-.contact-info-upper-container:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 20px var(--glow-color);
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: 1.2rem;
-  color: var(--text-dark);
-}
-
-.contact-info-container a {
-  color: var(--text-dark);
-  transition: color 0.3s;
-}
-
-.contact-info-container a:hover {
-  color: var(--primary-color);
-  text-decoration: none;
-  text-shadow: 0 0 10px var(--glow-color);
-}
-
-.email-icon {
-  height: 2rem;
-}
-
-/* =========================================
-   FOOTER SECTION
-   ========================================= */
-
-footer {
-  height: 20vh;
-  margin: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid var(--border-color);
-  margin-top: auto;
-}
-
-footer nav {
-  position: relative;
-  height: fit-content;
-  margin-bottom: 1rem;
-  background: transparent;
-  backdrop-filter: none;
-  border: none;
-  padding-top: 1rem;
-}
-
-footer p {
-  text-align: center;
-  color: var(--text-gray);
-  font-size: 0.9rem;
-}
-
-/* =========================================
-   ANIMASYONLAR
-   ========================================= */
+/* Görünür olma efekti sınıfları */
 .hidden {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1s ease;
+  transition: 1s;
   filter: blur(5px);
 }
 
@@ -624,15 +556,13 @@ footer p {
   filter: blur(0);
 }
 
+/* Yazı yazma efekti */
 .typing-effect {
   border-right: 3px solid var(--primary-color);
   white-space: nowrap;
   overflow: hidden;
   width: 0;
   animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
-  color: var(--primary-color);
-  font-weight: 600;
-  text-shadow: 0 0 15px var(--glow-color);
 }
 
 @keyframes typing {
@@ -646,180 +576,136 @@ footer p {
 }
 
 @keyframes blink {
-
-  from,
-  to {
+  50% {
     border-color: transparent
   }
-
-  50% {
-    border-color: var(--primary-color);
-  }
 }
+
 
 /* =========================================
-   MEDIA QUERIES (RESPONSIVE DÜZELTMELER)
+   RESPONSIVE (MEDYA SORGULARI)
+   Ekran boyutuna göre sitenin nasıl değişeceğini belirler.
    ========================================= */
 
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: auto;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  section {
-    padding-top: 110px;
-  }
-
-  .about-containers {
-    flex-wrap: wrap;
-  }
-
-  #contact,
-  #projects {
-    height: fit-content;
-    padding-bottom: 4rem;
-  }
-}
-
+/* 1. TABLET & KÜÇÜK LAPTOP (1200px altı) */
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
   }
 
-  /* Mobilde menü arka planı ve çizgi ayarı */
+  /* Masaüstü menüyü kapat */
   #hamburger-nav {
     display: flex;
-    background-color: #050505 !important;
-    border: none !important;
   }
 
-  #profile,
-  .section-container {
-    display: block;
+  /* Mobil menüyü aç */
+
+  section {
+    padding-top: 100px;
+    height: auto;
+    padding-bottom: 4rem;
+  }
+
+  #profile {
+    flex-direction: column;
+    /* Yan yana yerine alt alta */
+    gap: 2rem;
+    height: auto;
+    margin-top: 2rem;
+  }
+
+  .section__pic-container img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-containers {
+    flex-wrap: wrap;
   }
 
   .arrow {
     display: none;
   }
 
-  section,
-  .section-container {
-    height: fit-content;
-  }
-
-  section {
-    margin: 0 5%;
-    padding-top: 120px;
-  }
-
-  .section__pic-container {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto 3rem;
-  }
-
-  .about-containers {
-    margin-top: 2rem;
-  }
+  /* Oku gizle */
 }
 
-@media screen and (max-width: 600px) {
-  section {
-    padding-top: 140px !important;
-  }
-
-  #contact,
-  footer {
-    height: fit-content;
-    padding-bottom: 3rem;
-  }
-
-  #profile {
-    height: auto;
-    margin-bottom: 3rem;
-  }
-
+/* 2. TABLET DIKEY & BÜYÜK TELEFON (900px altı) */
+@media screen and (max-width: 900px) {
   .title {
-    font-size: 2.5rem;
-  }
-
-  .section__text__p2 {
-    font-size: 1.4rem;
+    font-size: 3rem;
   }
 
   .about-containers {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    width: 100%;
   }
 
   .details-container {
     width: 100%;
-    padding: 1.5rem;
+    max-width: 600px;
+  }
+}
+
+/* 3. MOBİL CİHAZLAR (600px altı) */
+@media screen and (max-width: 600px) {
+  section {
+    padding-top: 110px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  /* Buton Düzeni */
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+
+  .section__pic-container img {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* DÜZELTME: Butonlar mobilde şişmesin ve düzgün dursun */
   .btn-container {
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
+    /* Butonlar arası boşluk */
+    justify-content: center;
   }
 
-  .btn,
-  .project-btn {
-    width: fit-content !important;
-    padding: 0.8rem 1.2rem;
+  .btn {
+    padding: 1rem 1.5rem;
     font-size: 0.9rem;
+    width: fit-content !important;
+    /* DÜZELTME: Buton sadece içeriği kadar yer kaplar */
+    flex-grow: 0 !important;
+    /* DÜZELTME: Esnek kutuda genişlemeyi engelle */
   }
 
-  footer nav {
-    height: fit-content;
-    margin-bottom: 1.5rem;
-    padding-top: 0;
+  .project-img {
+    height: auto;
+    max-height: 200px;
   }
 
   .contact-info-upper-container {
     flex-direction: column;
-    padding: 1.5rem;
-  }
-
-  .contact-info-container {
-    margin: 0.5rem 0;
-  }
-
-  .experience-sub-title {
-    font-size: 1.4rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
-  .section__pic-container {
-    width: 250px !important;
-    height: 250px !important;
-    margin: 0 auto 2rem;
-  }
-
-  .text-container {
-    text-align: center;
-  }
-
-  /* Resim Kontrolü */
-  .project-img {
-    height: auto !important;
+    padding: 1rem;
+    gap: 1rem;
     width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
+  }
+
+  .contact-info-container p {
+    font-size: 0.9rem;
+    word-break: break-all;
+  }
+
+  footer nav .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }

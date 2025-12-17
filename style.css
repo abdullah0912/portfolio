@@ -46,6 +46,12 @@ body {
     linear-gradient(var(--border-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
   background-size: 50px 50px;
+
+  /* Mevcut kodların kalıyor... */
+  background-attachment: fixed;
+  /* Deseni sabitleyerek kaydırma performansını artırır */
+  will-change: transform;
+  /* Tarayıcıyı animasyonlara hazırlar */
 }
 
 /* HTML Temel Ayarı */
@@ -548,6 +554,8 @@ footer nav {
   transform: translateY(50px);
   transition: 1s;
   filter: blur(5px);
+  backface-visibility: hidden;
+  /* Mobil tarayıcılar için donanım ivmelenmesi sağlar */
 }
 
 .show {

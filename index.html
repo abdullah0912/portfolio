@@ -2,304 +2,207 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdullah Kaşgar | AI & Embedded Dev</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Kaşgar - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-  <nav id="desktop-nav">
-    <a href="index.html" class="logo">Abdullah Kaşgar</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <nav id="hamburger-nav">
-    <a href="index.html" class="logo">Abdullah Kaşgar</a>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    <div class="background-overlay"></div>
 
-  <section id="profile">
-    <div class="section__pic-container hidden">
-      <img src="./assets/profile-pic.png" alt="Abdullah Kaşgar profile picture" />
-    </div>
-    <div class="section__text hidden delay-200">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Abdullah Kaşgar⚡</h1>
-      <p class="section__text__p2 typing-effect">Software Developer</p>
-      <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('assets/cv.pdf')">Download CV</button>
-        <button class="btn btn-color-1" onclick="window.location.href='#contact'">Contact Info</button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/abdullahka%C5%9Fgar/'" />
-        <img src="./assets/github.png" alt="Github" class="icon"
-          onclick="location.href='https://github.com/abdullah0912'" />
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <p class="section__text__p1 hidden">Get To Know More</p>
-    <h1 class="title hidden">About Me</h1>
-    <div class="section-container">
-      <div class="about-containers">
-        <div class="details-container hidden delay-100">
-          <img src="./assets/experience.png" alt="Experience" class="icon" />
-          <h3>Experience</h3>
-          <p>3+ years Hands-on Coding<br />Software Development</p>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#top"><span>Abdullah Kaşgar</span></a>
+            </div>
+            <nav>
+                <a href="#about" data-lang="nav-about">About Me</a>
+                <a href="#blog" data-lang="nav-blog">Blog</a>
+                <a href="#contact" class="btn-white" data-lang="nav-contact">Contact</a>
+            </nav>
         </div>
-        <div class="details-container hidden delay-300">
-          <img src="./assets/education.png" alt="Education" class="icon" />
-          <h3>Education</h3>
-          <p>Associate's Degree<br />(Computer Programming)</p>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="container hero-content">
+            <div class="avatar-wrapper">
+                <img src="images/avatar.png" alt="Abdullah Kaşgar" class="avatar">
+            </div>
+
+            <h1 style="line-height: 1.1; margin-bottom: 20px;">
+                Hi👋<br>I'm Abdullah⚡
+            </h1>
+
+            <p class="subtitle" data-lang="hero-subtitle">I do Code & <span class="gradient-text">Chill 🍿</span></p>
+
+            <p class="description" data-lang="hero-desc">
+                Passionate Computer Programmer with a focus on Embedded Systems and AI, dedicated to crafting elegant and
+                functional solutions.
+            </p>
+
+            <a href="#contact" class="btn-outline" data-lang="hero-btn">Contact Me</a>
         </div>
-      </div>
-      <div class="text-container hidden delay-400">
-        <p>
-          Currently pursuing Computer Programming at Istanbul University, I am evolving into a full-spectrum software
-          engineer. My focus is at the intersection of <b>Artificial Intelligence</b> and <b>Embedded Systems</b>.
-          I move beyond theory to practical applications of <b>Machine Learning</b> and <b>Neural Networks</b>,
-          while engineering robust systems with <b>Arduino</b> and real-time <b>IoT integration</b>.
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="experience">
-    <p class="section__text__p1 hidden">Explore My</p>
-    <h1 class="title hidden">Experience</h1>
-    <div class="section-container">
-      <div class="about-containers">
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-lang="about-title">ABOUT ME</h2>
+            <p class="section-subtitle" data-lang="explore">EXPLORE NOW</p>
 
-        <div class="details-container hidden delay-100">
-          <h3 class="experience-sub-title">App Development Stack</h3>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>HTML</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>CSS</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>JavaScript</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Dart</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Flutter</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Java</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-          </div>
+            <div class="text-content">
+                <p data-lang="about-text-1">As a passionate software engineer, I thrive on the intricate dance between
+                    logic and creativity. Currently focused on embedded systems and modern software technologies.</p>
+                <br>
+                <p data-lang="about-text-2">Solving complex problems and creating user-friendly experiences is my
+                    biggest motivation. I develop projects with C, Python, and Web technologies.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="details-container hidden delay-300">
-          <h3 class="experience-sub-title">DB, AI & Embedded Stack</h3>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>MySQL</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>SQLite</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Arduino</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Git</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-          </div>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-lang="projects-title">PROJECTS</h2>
+            <p class="section-subtitle" data-lang="works">MY WORKS</p>
+
+            <div class="projects-grid">
+                <a href="proje-detay.html" class="project-card">
+                    <div class="project-icon"
+                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-users-cog" style="color:#333; font-size: 1.5rem;"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>WebHR Clone</h3>
+                        <p data-lang="proj-1-desc">Cloud-based HR software interface for SMEs.</p>
+                    </div>
+                </a>
+
+                <a href="proje-detay.html" class="project-card">
+                    <div class="project-icon"
+                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-video" style="color:#333; font-size: 1.5rem;"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Object Detection</h3>
+                        <p data-lang="proj-2-desc">Object detection system via webcam.</p>
+                    </div>
+                </a>
+
+                <a href="proje-detay.html" class="project-card">
+                    <div class="project-icon"
+                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-microchip" style="color:#333; font-size: 1.5rem;"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Arduino Automation</h3>
+                        <p data-lang="proj-3-desc">Home automation project with embedded systems.</p>
+                    </div>
+                </a>
+
+                <a href="proje-detay.html" class="project-card">
+                    <div class="project-icon"
+                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-laptop-code" style="color:#333; font-size: 1.5rem;"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p data-lang="proj-4-desc">Modern and responsive personal website.</p>
+                    </div>
+                </a>
+
+                <a href="proje-detay.html" class="project-card">
+                    <div class="project-icon"
+                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-seedling" style="color:#333; font-size: 1.5rem;"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Smart Agriculture</h3>
+                        <p data-lang="proj-5-desc">IoT-based smart agriculture tracking system.</p>
+                    </div>
+                </a>
+
+                <a href="proje-detay.html" class="project-card">
+                    <div class="project-icon"
+                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-microphone-lines" style="color:#333; font-size: 1.5rem;"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Voice Assistant AI</h3>
+                        <p data-lang="proj-6-desc">Python-based voice assistant application.</p>
+                    </div>
+                </a>
+            </div>
         </div>
+    </section>
 
-      </div>
-    </div>
-  </section>
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">BLOG</h2>
+            <p class="section-subtitle" data-lang="recent-posts">RECENT POSTS</p>
 
-  <section id="projects">
-    <p class="section__text__p1 hidden">Browse My Recent</p>
-    <h1 class="title hidden">Projects</h1>
+            <div class="blog-grid">
+                <a href="blog-detay.html?id=1" class="blog-card">
+                    <div class="blog-image" style="background-image: url('images/blog1.jpg');"></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-lang="date-1">29 Dec 2025</span>
+                        <h3 data-lang="blog-1-title">Intro to Embedded Systems</h3>
+                        <p data-lang="blog-1-desc">What to consider when stepping into the embedded world?</p>
+                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
+                    </div>
+                </a>
 
-    <div class="slider-main-container hidden delay-200">
-      <button class="nav-btn prev" onclick="scrollSlider('project-slider', 'left')">&#10094;</button>
+                <a href="blog-detay.html?id=2" class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-date" data-lang="date-2">15 Dec 2025</span>
+                        <h3 data-lang="blog-2-title">Blue Ocean Strategy in Tech</h3>
+                        <p data-lang="blog-2-desc">How to escape competition and create your own market?</p>
+                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
+                    </div>
+                </a>
 
-      <div class="slider-wrapper" id="project-slider">
-        <div class="slider-card">
-          <img src="./assets/project_img_1.jpg" alt="Project 1" class="project-img" />
-          <h2 class="project-title">Restaurant Management</h2>
-          <div class="project-btn-container">
-            <button class="project-btn" onclick="location.href='https://github.com/'">Github</button>
-            <button class="project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
-          </div>
+                <a href="blog-detay.html?id=3" class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-date" data-lang="date-3">10 Dec 2025</span>
+                        <h3 data-lang="blog-3-title">C Language and Pointers</h3>
+                        <p data-lang="blog-3-desc">Understanding memory management logic.</p>
+                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="blog-detay.html?id=4" class="blog-card">
+                    <div class="blog-content">
+                        <span class="blog-date" data-lang="date-4">1 Dec 2025</span>
+                        <h3 data-lang="blog-4-title">My Web Dev Journey</h3>
+                        <p data-lang="blog-4-desc">Challenges learning HTML & CSS.</p>
+                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="view-more-container">
+                <a href="blog.html" class="btn-outline" data-lang="view-all">View All Posts</a>
+            </div>
         </div>
-        <div class="slider-card">
-          <img src="./assets/project_img_1.jpg" alt="Project 2" class="project-img" />
-          <h2 class="project-title">Arduino AI System</h2>
-          <div class="project-btn-container">
-            <button class="project-btn" onclick="location.href='https://github.com/'">Github</button>
-            <button class="project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
-          </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="social-icons">
+                <a href="https://github.com/abdullah0912" target="_blank" class="social-link github"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abdullahka%C5%9Fgar/" target="_blank"
+                    class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/abdullah.kasgar/" target="_blank" class="social-link instagram"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Abdullah Kaşgar. <span data-lang="rights">All rights reserved.</span></p>
         </div>
-        <div class="slider-card">
-          <img src="./assets/project_img_1.jpg" alt="Project 3" class="project-img" />
-          <h2 class="project-title">Flutter E-Commerce</h2>
-          <div class="project-btn-container">
-            <button class="project-btn" onclick="location.href='https://github.com/'">Github</button>
-            <button class="project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
-          </div>
-        </div>
-        <div class="slider-card">
-          <img src="./assets/project_img_1.jpg" alt="Project 4" class="project-img" />
-          <h2 class="project-title">Portfolio Website</h2>
-          <div class="project-btn-container">
-            <button class="project-btn" onclick="location.href='https://github.com/'">Github</button>
-            <button class="project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
-          </div>
-        </div>
-      </div>
+    </footer>
 
-      <button class="nav-btn next" onclick="scrollSlider('project-slider', 'right')">&#10095;</button>
-    </div>
-  </section>
-
-  <section id="blog">
-    <p class="section__text__p1 hidden">Latest Articles</p>
-    <h1 class="title hidden">My Blog</h1>
-
-    <div class="slider-main-container hidden delay-200">
-      <button class="nav-btn prev" onclick="scrollSlider('blog-slider', 'left')">&#10094;</button>
-
-      <div class="slider-wrapper" id="blog-slider">
-        <div class="slider-card blog-card" onclick="location.href='blog-details.html'">
-          <p class="blog-date">Dec 22, 2025</p>
-          <h3 class="blog-title">Gömülü Sistemlerde Yapay Zeka</h3>
-          <p class="blog-desc">Arduino ve AI modellerini nasıl entegre edebileceğinizi bu yazıda detaylıca inceledik.
-          </p>
-          <span class="read-more-btn">Read More &rarr;</span>
-        </div>
-
-        <div class="slider-card blog-card" onclick="location.href='blog-details.html'">
-          <p class="blog-date">Dec 15, 2025</p>
-          <h3 class="blog-title">Flutter ile Mobil Geliştirme</h3>
-          <p class="blog-desc">Cross-platform mobil uygulama geliştirmenin püf noktaları ve performans ipuçları.</p>
-          <span class="read-more-btn">Read More &rarr;</span>
-        </div>
-
-        <div class="slider-card blog-card" onclick="location.href='blog-details.html'">
-          <p class="blog-date">Nov 30, 2025</p>
-          <h3 class="blog-title">Açık Kaynak Kod Dünyası</h3>
-          <p class="blog-desc">GitHub'da projelere nasıl katkıda bulunabilirsiniz? Adım adım rehber.</p>
-          <span class="read-more-btn">Read More &rarr;</span>
-        </div>
-
-        <div class="slider-card blog-card" onclick="location.href='blog-details.html'">
-          <p class="blog-date">Nov 20, 2025</p>
-          <h3 class="blog-title">Yazılım Kariyeri</h3>
-          <p class="blog-desc">Üniversite okurken yazılım sektörüne nasıl hazırlanmalısınız?</p>
-          <span class="read-more-btn">Read More &rarr;</span>
-        </div>
-      </div>
-
-      <button class="nav-btn next" onclick="scrollSlider('blog-slider', 'right')">&#10095;</button>
-    </div>
-  </section>
-
-  <section id="contact">
-    <p class="section__text__p1 hidden">Get in Touch</p>
-    <h1 class="title hidden">Contact Me</h1>
-    <div class="contact-info-upper-container hidden delay-100">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email" class="icon contact-icon" />
-        <p><a href="mailto:abdullahkasgar2494@gmail.com">abdullahkasgar2494@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/abdullah-ka%C5%9Fgar-6220a3329/">LinkedIn</a></p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <p>Copyright &#169; <span id="year"></span> Abdullah Kaşgar. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -135,16 +135,28 @@ const blogPosts = {
     }
 };
 
-// --- TÜRKÇE ÇEVİRİLERİ (İngilizce Varsayılan Olduğu İçin Sadece TR Gerekli) ---
+// --- DİL YÖNETİMİ ---
 const translations = {
     tr: {
-        "nav-about": "Hakkımda", "nav-blog": "Blog", "nav-contact": "İletişim",
+        // Navigasyon
+        "nav-about": "Hakkımda",
+        "nav-blog": "Blog",
+        "nav-contact": "İletişim",
+
+        // Hero Bölümü (Tam Çeviri)
+        "hero-title": "Selam👋<br>Ben Abdullah⚡",
         "hero-subtitle": "Kod Yazarım & <span class='gradient-text'>Dinlenirim 🍿</span>",
-        "hero-desc": "Gömülü Sistemler ve Yapay Zeka odaklı, şık ve işlevsel çözümler üretmeye kendini adamış tutkulu bir Yazılım Mühendisi.",
-        "hero-btn": "Bana Ulaşın", "about-title": "HAKKIMDA", "explore": "KEŞFET",
+        "hero-desc": "İstanbul Üniversitesi Bilgisayar Programcılığı öğrencisi olarak, tam donanımlı bir yazılım mühendisi olma yolunda ilerliyorum. Odak noktam Yapay Zeka ve Gömülü Sistemlerin kesişiminde yer alıyor. Makine Öğrenimi ve Sinir Ağlarını teoriden pratiğe taşırken, Arduino ve gerçek zamanlı IoT entegrasyonu ile sağlam sistemler tasarlıyorum.",
+        "hero-btn": "Bana Ulaşın",
+
+        // Hakkımda ve Bölüm Başlıkları
+        "about-title": "HAKKIMDA",
+        "explore": "KEŞFET",
         "about-text-1": "Yazılım dünyasında mantık ve yaratıcılık arasındaki dengede ilerleyen tutkulu bir geliştiriciyim.",
         "about-text-2": "Karmaşık problemleri çözmek en büyük motivasyonum.",
-        "projects-title": "PROJELER", "works": "ÇALIŞMALARIM", "recent-posts": "SON YAZILAR",
+        "projects-title": "PROJELER",
+        "works": "ÇALIŞMALARIM",
+        "recent-posts": "SON YAZILAR",
 
         // Blog Başlıkları ve Özetleri
         "blog-1-title": "Embedded Systems'a Giriş", "blog-1-desc": "Gömülü sistemler dünyasına adım atarken nelere dikkat etmeliyiz?",
@@ -156,7 +168,7 @@ const translations = {
         "blog-7-title": "Mikroservis Mimarisi", "blog-7-desc": "Monolitik yapıdan mikroservislere geçiş süreci.",
         "blog-8-title": "Clean Code Prensipleri", "blog-8-desc": "Daha okunabilir ve sürdürülebilir kod yazmak için ipuçları.",
 
-        // Blog Tarihleri (Statik kartlar için)
+        // Blog Tarihleri
         "date-1": "29 Aralık 2025", "date-2": "15 Aralık 2025", "date-3": "10 Aralık 2025", "date-4": "1 Aralık 2025",
         "date-5": "25 Kasım 2025", "date-6": "18 Kasım 2025", "date-7": "10 Kasım 2025", "date-8": "1 Kasım 2025",
 
@@ -168,22 +180,28 @@ const translations = {
         "proj-5-desc": "IoT tabanlı akıllı tarım takip sistemi.",
         "proj-6-desc": "Python tabanlı sesli asistan uygulaması.",
 
-        // Proje Detay Sayfası (YENİ)
+        // Diğer Metinler
         "construction-title": "PROJE YAPIM AŞAMASINDADIR",
         "construction-desc": "Bu projenin detayları üzerine şu anda çalışıyorum.<br>Yakında burada olacak.",
-
-        "read-more": "Devamını Oku &rarr;", "view-all": "Tüm Yazıları Gör", "rights": "Tüm hakları saklıdır.",
-        "more-coming": "Daha fazla içerik yakında eklenecektir.", "back-home": "Ana Sayfaya Dön",
-        "go-back": "&larr; Geri Dön", "thanks-reading": "Okuduğunuz için teşekkürler.", "check-others": "Diğer Yazılara Göz At"
+        "read-more": "Devamını Oku &rarr;",
+        "view-all": "Tüm Yazıları Gör",
+        "rights": "Tüm hakları saklıdır.",
+        "more-coming": "Daha fazla içerik yakında eklenecektir.",
+        "back-home": "Ana Sayfaya Dön",
+        "go-back": "&larr; Geri Dön",
+        "thanks-reading": "Okuduğunuz için teşekkürler.",
+        "check-others": "Diğer Yazılara Göz At"
     }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Dil Ayarları (Varsayılan EN, kullanıcı TR ise TR yap)
+    // 1. Dil Algılama (Cihaz/Tarayıcı Dili)
     const userLang = navigator.language || navigator.userLanguage;
+
+    // Eğer dil kodu 'tr' ile başlıyorsa (tr, tr-TR vb.) Türkçe yap, yoksa İngilizce kal.
     const lang = userLang.startsWith('tr') ? 'tr' : 'en';
 
-    // Sadece kullanıcı Türk ise çeviri yap (çünkü HTML zaten İngilizce)
+    // Sadece kullanıcı Türk ise çeviri yap
     if (lang === 'tr') {
         const elements = document.querySelectorAll("[data-lang]");
         elements.forEach(element => {
@@ -202,24 +220,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const post = blogPosts[postId];
 
         if (post) {
-            // İlgili dildeki içeriği seç (post.tr veya post.en)
             const contentData = post[lang] || post['en'];
 
-            document.getElementById("post-title").innerText = contentData.title;
-            // Tarih artık dil objesinin içinde
-            document.getElementById("post-date").innerText = contentData.date;
-            document.getElementById("post-body").innerHTML = contentData.content;
+            const titleEl = document.getElementById("post-title");
+            const dateEl = document.getElementById("post-date");
+            const bodyEl = document.getElementById("post-body");
+            const imgEl = document.getElementById("post-image");
+            const loadingEl = document.getElementById("loading");
+            const contentEl = document.getElementById("blog-content");
 
-            if (post.image) {
-                document.getElementById("post-image").src = post.image;
-            } else {
-                document.getElementById("post-image").style.display = 'none';
+            if (titleEl) titleEl.innerText = contentData.title;
+            if (dateEl) dateEl.innerText = contentData.date;
+            if (bodyEl) bodyEl.innerHTML = contentData.content;
+
+            if (post.image && imgEl) {
+                imgEl.src = post.image;
+            } else if (imgEl) {
+                imgEl.style.display = 'none';
             }
 
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("blog-content").style.display = "block";
+            if (loadingEl) loadingEl.style.display = "none";
+            if (contentEl) contentEl.style.display = "block";
         } else {
-            document.getElementById("loading").innerText = lang === 'tr' ? "Yazı bulunamadı." : "Post not found.";
+            const loadingEl = document.getElementById("loading");
+            if (loadingEl) loadingEl.innerText = lang === 'tr' ? "Yazı bulunamadı." : "Post not found.";
         }
+    }
+
+    // 3. TARİH GÜNCELLEME (Otomatik Yıl)
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 });

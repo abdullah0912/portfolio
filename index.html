@@ -4,31 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdullah Kaşgar - Embedded Systems & AI Engineer Portfolio">
+    <meta property="og:title" content="Abdullah Kaşgar | Yazılım Mühendisi">
+    <meta property="og:description" content="Gömülü Sistemler ve Yapay Zeka üzerine profesyonel portfolyo.">
+    <meta property="og:image" content="images/avatar.png">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
     <title>Abdullah Kaşgar - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <meta name="description" content="Abdullah Kaşgar - Embedded Systems & AI Engineer Portfolio">
-    <meta property="og:title" content="Abdullah Kaşgar | Software Developer">
-    <meta property="og:description" content="Gömülü Sistemler ve Yapay Zeka üzerine projelerim.">
-    <meta property="og:image" content="images/avatar.png">
 </head>
 
 <body>
-
-    <div class="background-overlay"></div>
 
     <header>
         <div class="container nav-container">
             <div class="logo">
                 <a href="#top"><span>Abdullah Kaşgar</span></a>
             </div>
-            <nav>
+
+            <nav class="nav-links" id="navLinks">
                 <a href="#about" data-lang="nav-about">About Me</a>
+                <a href="#skills" data-lang="nav-skills">Skills</a>
+                <a href="#projects" data-lang="nav-projects">Projects</a>
                 <a href="#blog" data-lang="nav-blog">Blog</a>
-                <a href="#contact" class="btn-white" data-lang="nav-contact">Contact</a>
+                <a href="#contact" data-lang="nav-contact">Contact</a>
             </nav>
+
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn">TR | EN</button>
+
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -38,7 +49,7 @@
                 <img src="images/avatar.png" alt="Abdullah Kaşgar" class="avatar">
             </div>
 
-            <h1 style="line-height: 1.1; margin-bottom: 20px;" data-lang="hero-title">
+            <h1 data-lang="hero-title">
                 Hi👋<br>I'm Abdullah⚡
             </h1>
 
@@ -49,7 +60,12 @@
                 software engineer. My focus is at the intersection of Artificial Intelligence and Embedded Systems.
             </p>
 
-            <a href="#contact" class="btn-outline" data-lang="hero-btn">Contact Me</a>
+            <div class="hero-buttons">
+                <a href="images/cv.pdf" download class="btn-white">
+                    <i class="fas fa-download"></i> <span data-lang="btn-cv">Download CV</span>
+                </a>
+                <a href="#contact" class="btn-outline" data-lang="hero-btn">Contact Me</a>
+            </div>
         </div>
     </section>
 
@@ -58,12 +74,93 @@
             <h2 class="section-title" data-lang="about-title">ABOUT ME</h2>
             <p class="section-subtitle" data-lang="explore">EXPLORE NOW</p>
 
-            <div class="text-content">
+            <div class="text-content" style="max-width: 800px; margin: 0 auto; color:#ccc;">
                 <p data-lang="about-text-1">As a passionate software engineer, I thrive on the intricate dance between
                     logic and creativity. Currently focused on embedded systems and modern software technologies.</p>
                 <br>
                 <p data-lang="about-text-2">Solving complex problems and creating user-friendly experiences is my
                     biggest motivation. I develop projects with C, Python, and Web technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-lang="skills-title">TECH STACK</h2>
+            <p class="section-subtitle" data-lang="skills-sub">MY ARSENAL</p>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 data-lang="skill-cat-1">App Development Stack</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <i class="fab fa-html5" style="color: #E34F26;"></i>
+                            <div class="skill-info">
+                                <h4>HTML</h4><span>Experienced</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                            <div class="skill-info">
+                                <h4>CSS</h4><span>Experienced</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js" style="color: #F7DF1E;"></i>
+                            <div class="skill-info">
+                                <h4>JavaScript</h4><span>Basic</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-android" style="color: #0175C2;"></i>
+                            <div class="skill-info">
+                                <h4>Dart</h4><span>Experienced</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt" style="color: #02569B;"></i>
+                            <div class="skill-info">
+                                <h4>Flutter</h4><span>Experienced</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java" style="color: #007396;"></i>
+                            <div class="skill-info">
+                                <h4>Java</h4><span>Basic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 data-lang="skill-cat-2">DB, AI & Embedded Stack</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <i class="fas fa-database" style="color: #00758F;"></i>
+                            <div class="skill-info">
+                                <h4>MySQL</h4><span>Basic</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-table" style="color: #003B57;"></i>
+                            <div class="skill-info">
+                                <h4>SQLite</h4><span>Basic</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-microchip" style="color: #00979D;"></i>
+                            <div class="skill-info">
+                                <h4>Arduino</h4><span>Experienced</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                            <div class="skill-info">
+                                <h4>Git</h4><span>Basic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -74,10 +171,8 @@
             <p class="section-subtitle" data-lang="works">MY WORKS</p>
 
             <div class="projects-grid">
-                <a href="proje-detay.html" class="project-card">
-                    <div class="project-icon"
-                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-users-cog" style="color:#333; font-size: 1.5rem;"></i>
+                <a href="proje-detay.html?id=webhr" class="project-card">
+                    <div class="project-icon"><i class="fas fa-users-cog" style="color:#333; font-size: 1.5rem;"></i>
                     </div>
                     <div class="project-info">
                         <h3>WebHR Clone</h3>
@@ -85,21 +180,16 @@
                     </div>
                 </a>
 
-                <a href="proje-detay.html" class="project-card">
-                    <div class="project-icon"
-                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-video" style="color:#333; font-size: 1.5rem;"></i>
-                    </div>
+                <a href="proje-detay.html?id=ai-object" class="project-card">
+                    <div class="project-icon"><i class="fas fa-video" style="color:#333; font-size: 1.5rem;"></i></div>
                     <div class="project-info">
                         <h3>AI Object Detection</h3>
                         <p data-lang="proj-2-desc">Object detection system via webcam.</p>
                     </div>
                 </a>
 
-                <a href="proje-detay.html" class="project-card">
-                    <div class="project-icon"
-                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-microchip" style="color:#333; font-size: 1.5rem;"></i>
+                <a href="proje-detay.html?id=arduino" class="project-card">
+                    <div class="project-icon"><i class="fas fa-microchip" style="color:#333; font-size: 1.5rem;"></i>
                     </div>
                     <div class="project-info">
                         <h3>Arduino Automation</h3>
@@ -107,10 +197,8 @@
                     </div>
                 </a>
 
-                <a href="proje-detay.html" class="project-card">
-                    <div class="project-icon"
-                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-laptop-code" style="color:#333; font-size: 1.5rem;"></i>
+                <a href="proje-detay.html?id=portfolio" class="project-card">
+                    <div class="project-icon"><i class="fas fa-laptop-code" style="color:#333; font-size: 1.5rem;"></i>
                     </div>
                     <div class="project-info">
                         <h3>Portfolio Website</h3>
@@ -118,10 +206,8 @@
                     </div>
                 </a>
 
-                <a href="proje-detay.html" class="project-card">
-                    <div class="project-icon"
-                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-seedling" style="color:#333; font-size: 1.5rem;"></i>
+                <a href="proje-detay.html?id=smart-ag" class="project-card">
+                    <div class="project-icon"><i class="fas fa-seedling" style="color:#333; font-size: 1.5rem;"></i>
                     </div>
                     <div class="project-info">
                         <h3>Smart Agriculture</h3>
@@ -129,11 +215,9 @@
                     </div>
                 </a>
 
-                <a href="proje-detay.html" class="project-card">
-                    <div class="project-icon"
-                        style="background:#fff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-microphone-lines" style="color:#333; font-size: 1.5rem;"></i>
-                    </div>
+                <a href="proje-detay.html?id=voice-ai" class="project-card">
+                    <div class="project-icon"><i class="fas fa-microphone-lines"
+                            style="color:#333; font-size: 1.5rem;"></i></div>
                     <div class="project-info">
                         <h3>Voice Assistant AI</h3>
                         <p data-lang="proj-6-desc">Python-based voice assistant application.</p>
@@ -164,24 +248,6 @@
                         <span class="blog-date" data-lang="date-2">15 Dec 2025</span>
                         <h3 data-lang="blog-2-title">Blue Ocean Strategy in Tech</h3>
                         <p data-lang="blog-2-desc">How to escape competition and create your own market?</p>
-                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="blog-detay.html?id=3" class="blog-card">
-                    <div class="blog-content">
-                        <span class="blog-date" data-lang="date-3">10 Dec 2025</span>
-                        <h3 data-lang="blog-3-title">C Language and Pointers</h3>
-                        <p data-lang="blog-3-desc">Understanding memory management logic.</p>
-                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="blog-detay.html?id=4" class="blog-card">
-                    <div class="blog-content">
-                        <span class="blog-date" data-lang="date-4">1 Dec 2025</span>
-                        <h3 data-lang="blog-4-title">My Web Dev Journey</h3>
-                        <p data-lang="blog-4-desc">Challenges learning HTML & CSS.</p>
                         <span class="read-more" data-lang="read-more">Read More &rarr;</span>
                     </div>
                 </a>

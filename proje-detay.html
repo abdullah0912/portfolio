@@ -5,102 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details - Abdullah Kaşgar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #050505;
-            color: white;
-            font-family: 'Inter', sans-serif;
+        .proj-detail-wrapper {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .proj-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .proj-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .tech-tags {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .container {
-            padding: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        h1 {
-            font-size: 3rem;
+            gap: 10px;
+            flex-wrap: wrap;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #bfaee3, #eb98a7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        p {
-            font-size: 1.2rem;
-            color: #888;
+        .tag {
+            background: rgba(123, 97, 255, 0.2);
+            color: #bfaee3;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(123, 97, 255, 0.4);
+        }
+
+        .proj-content {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
             margin-bottom: 40px;
         }
 
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #222;
-            border-top: 5px solid #eb98a7;
-            border-radius: 50%;
-            margin: 0 auto;
-            animation: spin 1s linear infinite;
+        .proj-links {
+            display: flex;
+            gap: 15px;
         }
 
-        .back-btn {
-            display: inline-block;
-            margin-top: 30px;
-            text-decoration: none;
-            color: #fff;
+        .proj-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 30px;
             border: 1px solid #333;
-            padding: 10px 30px;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-
-        .back-btn:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="loader"></div>
-        <br>
-        <h1 data-lang="construction-title">PROJECT UNDER CONSTRUCTION</h1>
-        <p data-lang="construction-desc">I am currently working on the details of this project.<br>It will be here soon.
-        </p>
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html"><span>Abdullah Kaşgar</span></a></div>
+            <nav class="nav-links">
+                <a href="index.html#projects" class="btn-outline" style="padding: 8px 20px;" data-lang="go-back">&larr;
+                    Go Back</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn">TR | EN</button>
+            </div>
+        </div>
+    </header>
 
-        <a href="index.html" class="back-btn" data-lang="back-home">Back to Home</a>
+    <div class="container">
+        <div class="proj-detail-wrapper">
+            <div id="project-container">
+            </div>
+        </div>
     </div>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="social-icons">
+                <a href="https://github.com/abdullah0912" target="_blank" class="social-link github"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abdullahka%C5%9Fgar/" target="_blank"
+                    class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/abdullah.kasgar/" target="_blank" class="social-link instagram"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> Abdullah Kaşgar. <span data-lang="rights">All rights
+                    reserved.</span></p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

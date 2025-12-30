@@ -1,4 +1,4 @@
-// --- PROJE DETAYLARI VERİTABANI (YENİ) ---
+// --- PROJE DETAYLARI VERİTABANI ---
 const projectsData = {
     "webhr": {
         en: {
@@ -132,8 +132,7 @@ const blogPosts = {
                 <p>Herkesin yaptığı bir Todo App yerine, niş bir uygulama geliştirmek sizi öne geçirir. İnovasyon sadece teknolojiyi değil, değer önerisini de değiştirmeyi hedefler.</p>
             `
         }
-    },
-    // Diğer blog yazıları buraya eklenebilir (Mevcut kodunda 3,4,5... varsa buraya aynen kopyalayabilirsin)
+    }
 };
 
 // --- ÇEVİRİLER ---
@@ -153,17 +152,14 @@ const translations = {
         "rights": "Tüm hakları saklıdır.", "go-back": "&larr; Geri Dön",
         "view-all": "Tüm Yazıları Gör", "back-home": "Ana Sayfaya Dön", "check-others": "Diğer Yazılara Göz At",
         "read-more": "Devamını Oku &rarr;", "thanks-reading": "Okuduğunuz için teşekkürler.",
-        // Proje Açıklamaları (Anasayfa)
         "proj-1-desc": "KOBİ'ler için bulut tabanlı İK yazılımı arayüzü.",
         "proj-2-desc": "Webcam üzerinden nesne algılama sistemi.",
         "proj-3-desc": "Gömülü sistemler ile ev otomasyonu projesi.",
         "proj-4-desc": "Modern ve responsive kişisel web sitesi.",
         "proj-5-desc": "IoT tabanlı akıllı tarım takip sistemi.",
         "proj-6-desc": "Python tabanlı sesli asistan uygulaması.",
-        // Blog Özetleri
         "blog-1-title": "Embedded Systems'a Giriş", "blog-1-desc": "Gömülü sistemler dünyasına adım atarken nelere dikkat etmeliyiz?",
         "blog-2-title": "Yazılımda Blue Ocean Stratejisi", "blog-2-desc": "Rekabetten sıyrılıp kendi pazarınızı nasıl oluşturursunuz?",
-        // Tarihler
         "date-1": "29 Aralık 2025", "date-2": "15 Aralık 2025"
     },
     en: {
@@ -181,17 +177,14 @@ const translations = {
         "rights": "All rights reserved.", "go-back": "&larr; Go Back",
         "view-all": "View All Posts", "back-home": "Back to Home", "check-others": "Check Other Posts",
         "read-more": "Read More &rarr;", "thanks-reading": "Thanks for reading.",
-        // Proje Açıklamaları (Anasayfa)
         "proj-1-desc": "Cloud-based HR software interface for SMEs.",
         "proj-2-desc": "Object detection system via webcam.",
         "proj-3-desc": "Home automation project with embedded systems.",
         "proj-4-desc": "Modern and responsive personal website.",
         "proj-5-desc": "IoT-based smart agriculture tracking system.",
         "proj-6-desc": "Python-based voice assistant application.",
-        // Blog Özetleri
         "blog-1-title": "Intro to Embedded Systems", "blog-1-desc": "What to consider when stepping into the embedded world?",
         "blog-2-title": "Blue Ocean Strategy in Tech", "blog-2-desc": "How to escape competition and create your own market?",
-        // Tarihler
         "date-1": "29 Dec 2025", "date-2": "15 Dec 2025"
     }
 };
@@ -238,7 +231,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (projId && projectsData[projId]) {
             const data = projectsData[projId][currentLang];
-            // Placeholder resim
             const imgPath = "images/project-placeholder.jpg";
 
             let tagsHtml = data.tech.map(t => `<span class="tag">${t}</span>`).join(" ");

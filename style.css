@@ -545,3 +545,15 @@ footer {
         /* Mobilde kenar boşlukları */
     }
 }
+
+/* Resim Koruması ve Statik Mod */
+img {
+    pointer-events: none;
+    /* Resme tıklamayı iptal eder (Link içindeyse link çalışmaya devam eder) */
+    user-select: none;
+    /* Resmin seçilmesini engeller (Mavi seçim alanı çıkmaz) */
+    -webkit-user-drag: none;
+    /* Resmin sürüklenmesini engeller (Sürükleyip masaüstüne bırakamazlar) */
+    -webkit-touch-callout: none;
+    /* Mobilde uzun basınca çıkan menüyü engeller */
+}

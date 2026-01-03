@@ -386,12 +386,14 @@ header {
 }
 
 .blog-image {
+    width: 100%;
     height: 200px;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    /* Resmi kutuya sığdırır */
     border-radius: 12px;
     margin-bottom: 20px;
     border: 1px solid #222;
+    display: block;
 }
 
 .blog-content {

@@ -240,19 +240,18 @@ header {
     /* Liste elemanlarını ortala */
 }
 
+/* Güncellenmiş Hali */
 .skill-item {
     display: flex;
     align-items: center;
     gap: 15px;
     width: 100%;
     max-width: 220px;
-    /* Çok geniş olmasın, derli toplu dursun */
     justify-content: flex-start;
-    /* İkon ve yazı birbirine yakın olsun ama blok ortada olsun */
-    background: rgba(255, 255, 255, 0.02);
-    /* Hafif bir arka plan (opsiyonel) */
-    padding: 10px 15px;
-    border-radius: 10px;
+    /* Sola hizalı kalsın */
+    /* background ve border-radius kaldırıldı */
+    padding: 5px 0;
+    /* Yan boşlukları sıfırladık, dikey boşluk azaldı */
 }
 
 .skill-item i {

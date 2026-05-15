@@ -2,280 +2,157 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Abdullah Kaşgar - Embedded Systems & AI Engineer Portfolio">
-    <meta property="og:title" content="Abdullah Kaşgar | Yazılım Mühendisi">
-    <meta property="og:description" content="Gömülü Sistemler ve Yapay Zeka üzerine profesyonel portfolyo.">
-    <meta property="og:image" content="images/avatar.png">
-
-    <link rel="icon" type="image/png" href="images/favicon.png">
-
-    <title>Abdullah Kaşgar - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Abdullah Kaşgar - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="files/icon.png" />
 </head>
 
 <body>
+  <header>
+    <div class="header">
+      <h1 class="name">Abdullah Kaşgar</h1>
+      <button id="theme-toggle" aria-label="Toggle Theme">
+        <!-- Light Mode SVG -->
+        <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sun-icon lucide-sun">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+        <!-- Dark Mode SVG -->
+        <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-moon-icon lucide-moon">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+      </button>
+      <script>
+        const toggleButton = document.getElementById("theme-toggle");
+        const root = document.documentElement;
 
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="#top"><span>Abdullah Kaşgar</span></a>
-            </div>
+        const savedTheme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
 
-            <nav class="nav-links" id="navLinks">
-                <a href="#about" data-lang="nav-about">About Me</a>
-                <a href="#skills" data-lang="nav-skills">Skills</a>
-                <a href="#projects" data-lang="nav-projects">Projects</a>
-                <a href="#blog" data-lang="nav-blog">Blog</a>
-                <a href="#contact" data-lang="nav-contact">Contact</a>
-            </nav>
+        applyTheme(savedTheme);
 
-            <div class="nav-actions">
-                <button id="lang-toggle" class="lang-btn">TR | EN</button>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+        toggleButton.addEventListener("click", () => {
+          const currentTheme = root.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+          applyTheme(newTheme);
+        });
 
-    <section class="hero" id="top">
-        <div class="container hero-content">
-            <div class="avatar-wrapper">
-                <img src="images/avatar.png" alt="Abdullah Kaşgar" class="avatar">
-            </div>
-
-            <h1 data-lang="hero-title">
-                Hi👋<br>I'm Abdullah⚡
-            </h1>
-
-            <p class="subtitle" data-lang="hero-subtitle">I do Code & <span class="gradient-text">Chill 🍿</span></p>
-
-            <p class="description" data-lang="hero-desc">
-                Currently pursuing Computer Programming at Istanbul University, I am evolving into a full-spectrum
-                software engineer. My focus is at the intersection of Artificial Intelligence and Embedded Systems.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="images/cv.pdf" download class="btn-white">
-                    <i class="fas fa-download"></i> <span data-lang="btn-cv">Download CV</span>
-                </a>
-                <a href="#contact" class="btn-outline" data-lang="hero-btn">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title" data-lang="about-title">ABOUT ME</h2>
-            <p class="section-subtitle" data-lang="explore">EXPLORE NOW</p>
-
-            <div class="text-content" style="max-width: 800px; margin: 0 auto; color:#ccc;">
-                <p data-lang="about-text-1">As a passionate software engineer, I thrive on the intricate dance between
-                    logic and creativity. Currently focused on embedded systems and modern software technologies.</p>
-                <br>
-                <p data-lang="about-text-2">Solving complex problems and creating user-friendly experiences is my
-                    biggest motivation. I develop projects with C, Python, and Web technologies.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title" data-lang="skills-title">TECH STACK</h2>
-            <p class="section-subtitle" data-lang="skills-sub">MY ARSENAL</p>
-
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3 data-lang="skill-cat-1">App Development Stack</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <i class="fab fa-html5" style="color: #E34F26;"></i>
-                            <div class="skill-info">
-                                <h4>HTML</h4><span>Experienced</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
-                            <div class="skill-info">
-                                <h4>CSS</h4><span>Experienced</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js" style="color: #F7DF1E;"></i>
-                            <div class="skill-info">
-                                <h4>JavaScript</h4><span>Basic</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-android" style="color: #0175C2;"></i>
-                            <div class="skill-info">
-                                <h4>Dart</h4><span>Experienced</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt" style="color: #02569B;"></i>
-                            <div class="skill-info">
-                                <h4>Flutter</h4><span>Experienced</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java" style="color: #007396;"></i>
-                            <div class="skill-info">
-                                <h4>Java</h4><span>Basic</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 data-lang="skill-cat-2">DB, AI & Embedded Stack</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <i class="fas fa-database" style="color: #00758F;"></i>
-                            <div class="skill-info">
-                                <h4>MySQL</h4><span>Basic</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-table" style="color: #003B57;"></i>
-                            <div class="skill-info">
-                                <h4>SQLite</h4><span>Basic</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-microchip" style="color: #00979D;"></i>
-                            <div class="skill-info">
-                                <h4>Arduino</h4><span>Experienced</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt" style="color: #F05032;"></i>
-                            <div class="skill-info">
-                                <h4>Git</h4><span>Basic</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title" data-lang="projects-title">PROJECTS</h2>
-            <p class="section-subtitle" data-lang="works">MY WORKS</p>
-
-            <div class="projects-grid">
-                <a href="proje-detay.html?id=webhr" class="project-card">
-                    <div class="project-icon"><i class="fas fa-users-cog" style="color:#333; font-size: 1.5rem;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>WebHR Clone</h3>
-                        <p data-lang="proj-1-desc">Cloud-based HR software interface for SMEs.</p>
-                    </div>
-                </a>
-
-                <a href="proje-detay.html?id=ai-object" class="project-card">
-                    <div class="project-icon"><i class="fas fa-video" style="color:#333; font-size: 1.5rem;"></i></div>
-                    <div class="project-info">
-                        <h3>AI Object Detection</h3>
-                        <p data-lang="proj-2-desc">Object detection system via webcam.</p>
-                    </div>
-                </a>
-
-                <a href="proje-detay.html?id=arduino" class="project-card">
-                    <div class="project-icon"><i class="fas fa-microchip" style="color:#333; font-size: 1.5rem;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Arduino Automation</h3>
-                        <p data-lang="proj-3-desc">Home automation project with embedded systems.</p>
-                    </div>
-                </a>
-
-                <a href="proje-detay.html?id=portfolio" class="project-card">
-                    <div class="project-icon"><i class="fas fa-laptop-code" style="color:#333; font-size: 1.5rem;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p data-lang="proj-4-desc">Modern and responsive personal website.</p>
-                    </div>
-                </a>
-
-                <a href="proje-detay.html?id=smart-ag" class="project-card">
-                    <div class="project-icon"><i class="fas fa-seedling" style="color:#333; font-size: 1.5rem;"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Smart Agriculture</h3>
-                        <p data-lang="proj-5-desc">IoT-based smart agriculture tracking system.</p>
-                    </div>
-                </a>
-
-                <a href="proje-detay.html?id=voice-ai" class="project-card">
-                    <div class="project-icon"><i class="fas fa-microphone-lines"
-                            style="color:#333; font-size: 1.5rem;"></i></div>
-                    <div class="project-info">
-                        <h3>Voice Assistant AI</h3>
-                        <p data-lang="proj-6-desc">Python-based voice assistant application.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="section">
-        <div class="container">
-            <h2 class="section-title">BLOG</h2>
-            <p class="section-subtitle" data-lang="recent-posts">RECENT POSTS</p>
-            <div class="blog-grid">
-
-                <a href="blog-detay.html?id=1" class="blog-card">
-                    <img src="images/embedded.jpg" alt="Embedded Systems" class="blog-image">
-                    <div class="blog-content">
-                        <span class="blog-date" data-lang="date-1">29 Dec 2025</span>
-                        <h3 data-lang="blog-1-title">Intro to Embedded Systems</h3>
-                        <p data-lang="blog-1-desc">What to consider when stepping into the embedded world?</p>
-                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="blog-detay.html?id=2" class="blog-card">
-                    <img src="images/blue-ocean.jpg" alt="Blue Ocean" class="blog-image">
-                    <div class="blog-content">
-                        <span class="blog-date" data-lang="date-2">15 Dec 2025</span>
-                        <h3 data-lang="blog-2-title">Blue Ocean Strategy in Tech</h3>
-                        <p data-lang="blog-2-desc">How to escape competition and create your own market?</p>
-                        <span class="read-more" data-lang="read-more">Read More &rarr;</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <div class="view-more-container">
-        <a href="blog.html" class="btn-outline" data-lang="view-all">View All Posts</a>
+        function applyTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        }
+      </script>
     </div>
+    <p class="description">
+      Junior Software Developer
+    </p>
+  </header>
+  <ul class="socials-list" aria-label="Social Links">
+    <li class="socials-item">
+      <a aria-label="GitHub" href="https://github.com/abdullah0912">
+        <!-- GitHub SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-github-icon lucide-github">
+          <path
+            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+          <path d="M9 18c-4.51 2-5-2-7-2" />
+        </svg>
+      </a>
+    </li>
+    <li class="socials-item">
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/abdullahka%C5%9Fgar/">
+        <!-- Linkedin SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-linkedin-icon lucide-linkedin">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+          <rect width="4" height="12" x="2" y="9" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      </a>
+    </li>
+    <li class="socials-item">
+      <a aria-label="Medium" href="https://medium.com/@abdullahkasgar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+          stroke="none" class="lucide">
+          <path
+            d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42M24 12c0 3.1-.38 5.6-1.12 5.6s-1.12-2.5-1.12-5.6.38-5.6 1.12-5.6 1.12 2.5 1.12 5.6" />
+        </svg>
+      </a>
+    </li>
+    <li class="socials-item">
+      <a aria-label="Resume" href="files/Cv.pdf">
+        <!-- Resume SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-file-text-icon lucide-file-text">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+          <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+          <path d="M10 9H8" />
+          <path d="M16 13H8" />
+          <path d="M16 17H8" />
+        </svg>
+      </a>
+    </li>
+  </ul>
+  <section class="experience-section" aria-label="Experience">
+    <div class="experience-item">
+      <h2 class="experience-job-title">Computer Programming Student</h2>
+      <p class="experience-job-info">Istanbul University | 2025 - Current</p>
     </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container footer-content">
-            <div class="social-icons">
-                <a href="https://github.com/abdullah0912" target="_blank" class="social-link github"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/abdullahka%C5%9Fgar/" target="_blank"
-                    class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/abdullah.kasgar/" target="_blank" class="social-link instagram"><i
-                        class="fab fa-instagram"></i></a>
-            </div>
-            <p class="copyright">&copy; <span id="year"></span> Abdullah Kaşgar. <span data-lang="rights">All rights
-                    reserved.</span></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="experience-item">
+      <h2 class="experience-job-title">Founder & Team Leader (Teknofest 2022)</h2>
+      <p class="experience-job-info">EvrenOSX Rocket Team | 2022</p>
+    </div>
+    <div class="experience-item">
+      <h2 class="experience-job-title">Game Developer Intern</h2>
+      <p class="experience-job-info">Bucchello Tech | 2023</p>
+    </div>
+  </section>
+  <section class="projects-section" aria-label="Projects">
+    <div class="project-card">
+      <h2 class="project-title">Online Course Platform</h2>
+      <p class="project-description">
+        Developed a comprehensive online course platform using Flutter for the frontend.
+      </p>
+      <ul class="project-skills">
+        <li>Flutter</li>
+        <li>Firebase</li>
+        <li>Dart</li>
+        <li>Figma</li>
+      </ul>
+      <ul class="project-links-list">
+        <li class="project-links-item">
+          <a href="https://github.com/abdullah0912/OnlineCourse-App" target="_blank" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-github-icon lucide-github">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg></a>
+        </li>
+      </ul>
+    </div>
+  </section>
 </body>
 
 </html>
